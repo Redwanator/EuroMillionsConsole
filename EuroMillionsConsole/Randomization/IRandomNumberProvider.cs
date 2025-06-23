@@ -1,4 +1,4 @@
-﻿namespace EuroMillionsConsole.Interfaces;
+﻿namespace EuroMillionsConsole.Randomization;
 
 /// <summary>
 /// Interface de service pour la génération de nombres entiers uniques aléatoires dans une plage donnée

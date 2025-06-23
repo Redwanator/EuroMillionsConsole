@@ -1,4 +1,4 @@
-﻿namespace EuroMillionsConsole.Interfaces;
+﻿namespace EuroMillionsConsole.Payment;
 
 /// <summary>
 /// Interface de gestion d’encaissement

@@ -1,6 +1,6 @@
-﻿using EuroMillionsConsole.Models;
+﻿using EuroMillionsConsole.Grids;
 
-namespace EuroMillionsConsole.Interfaces;
+namespace EuroMillionsConsole.Pricing;
 
 /// <summary>
 /// Interface de service pour l'affichage des grilles générées

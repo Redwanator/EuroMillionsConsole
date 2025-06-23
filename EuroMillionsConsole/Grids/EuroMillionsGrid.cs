@@ -1,4 +1,4 @@
-﻿namespace EuroMillionsConsole.Models;
+﻿namespace EuroMillionsConsole.Grids;
 
 /// <summary>
 /// Modèle d'une grille avec Numéros et Étoiles

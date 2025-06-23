@@ -1,7 +1,9 @@
-﻿using EuroMillionsConsole.Interfaces;
-using EuroMillionsConsole.Services;
+﻿using EuroMillionsConsole.Engine;
+using EuroMillionsConsole.Grids;
+using EuroMillionsConsole.Payment;
+using EuroMillionsConsole.Pricing;
+using EuroMillionsConsole.Randomization;
 using EuroMillionsConsole.UI;
-using EuroMillionsConsole.Utils;
 
 namespace EuroMillionsConsole;
 

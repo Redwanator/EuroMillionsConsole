@@ -1,7 +1,9 @@
-﻿using EuroMillionsConsole.Interfaces;
-using EuroMillionsConsole.Models;
+﻿using EuroMillionsConsole.Grids;
+using EuroMillionsConsole.Payment;
+using EuroMillionsConsole.Pricing;
+using EuroMillionsConsole.UI;
 
-namespace EuroMillionsConsole.Services;
+namespace EuroMillionsConsole.Engine;
 
 /// <summary>
 /// Moteur principal orchestrant la génération, le paiement et l'affichage des grilles

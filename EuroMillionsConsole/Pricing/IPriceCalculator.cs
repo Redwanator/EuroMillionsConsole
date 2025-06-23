@@ -1,4 +1,6 @@
-﻿namespace EuroMillionsConsole.Interfaces;
+﻿using EuroMillionsConsole.UI;
+
+namespace EuroMillionsConsole.Pricing;
 
 /// <summary>
 /// Interface de calcul de prix

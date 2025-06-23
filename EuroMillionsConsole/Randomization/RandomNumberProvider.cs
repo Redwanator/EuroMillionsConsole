@@ -1,6 +1,4 @@
-﻿using EuroMillionsConsole.Interfaces;
-
-namespace EuroMillionsConsole.Utils;
+﻿namespace EuroMillionsConsole.Randomization;
 
 /// <summary>
 /// Implémentation concrète de la génération de nombres aléatoires uniques dans une plage donnée

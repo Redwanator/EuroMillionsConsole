@@ -1,6 +1,6 @@
-﻿using EuroMillionsConsole.Interfaces;
+﻿using EuroMillionsConsole.UI;
 
-namespace EuroMillionsConsole.Services;
+namespace EuroMillionsConsole.Payment;
 
 /// <summary>
 /// Validation du paiement + rendu monnaie

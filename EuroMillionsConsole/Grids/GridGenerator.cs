@@ -1,7 +1,6 @@
-﻿using EuroMillionsConsole.Interfaces;
-using EuroMillionsConsole.Models;
+﻿using EuroMillionsConsole.Randomization;
 
-namespace EuroMillionsConsole.Services;
+namespace EuroMillionsConsole.Grids;
 
 /// <summary>
 /// Implémentation concrète de génération de grille

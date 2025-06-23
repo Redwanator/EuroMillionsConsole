@@ -1,6 +1,4 @@
-﻿using EuroMillionsConsole.Models;
-
-namespace EuroMillionsConsole.Interfaces;
+﻿namespace EuroMillionsConsole.Grids;
 
 /// <summary>
 /// Interface de génération de grille
