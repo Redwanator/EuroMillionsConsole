@@ -5,5 +5,5 @@
 /// </summary>
 internal interface ICashRegister
 {
-
+    decimal AskForPayment(decimal amountDue);
 }
