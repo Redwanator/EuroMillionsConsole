@@ -23,7 +23,7 @@ internal static class Program
         ICashRegister cashRegister = new CashRegister(ui);
         IGridDisplayService gridDisplay = new GridDisplayService(ui);
 
-        EuroMillionsEngine engine = new(generator, priceCalc, cashRegister, ui, gridDisplay);
+        EuroMillionsEngine engine = new(generator, priceCalc, ui, cashRegister, gridDisplay);
         engine.Run();
     }
 }

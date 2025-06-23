@@ -11,14 +11,14 @@ namespace EuroMillionsConsole.Engine;
 internal sealed class EuroMillionsEngine(
     IGridGenerator generator,
     IPriceCalculator priceCalculator,
-    ICashRegister cashRegister,
     IUserInteraction ui,
+    ICashRegister cashRegister,
     IGridDisplayService gridDisplay)
 {
     private readonly IGridGenerator _generator = generator;
     private readonly IPriceCalculator _priceCalculator = priceCalculator;
-    private readonly ICashRegister _cashRegister = cashRegister;
     private readonly IUserInteraction _ui = ui;
+    private readonly ICashRegister _cashRegister = cashRegister;
     private readonly IGridDisplayService _gridDisplay = gridDisplay;
 
     internal void Run()
