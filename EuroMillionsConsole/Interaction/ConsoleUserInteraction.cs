@@ -1,4 +1,4 @@
-﻿namespace EuroMillionsConsole.UI;
+﻿namespace EuroMillionsConsole.Interaction;
 
 /// <summary>
 /// Implémentation concrète pour intéractions console (Console.ReadLine/WriteLine)

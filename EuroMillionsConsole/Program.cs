@@ -1,9 +1,9 @@
 ﻿using EuroMillionsConsole.Engine;
 using EuroMillionsConsole.Grids;
+using EuroMillionsConsole.Interaction;
 using EuroMillionsConsole.Payment;
 using EuroMillionsConsole.Pricing;
 using EuroMillionsConsole.Randomization;
-using EuroMillionsConsole.UI;
 
 namespace EuroMillionsConsole;
 

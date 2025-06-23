@@ -1,4 +1,4 @@
-﻿using EuroMillionsConsole.UI;
+﻿using EuroMillionsConsole.Interaction;
 
 namespace EuroMillionsConsole.Pricing;
 

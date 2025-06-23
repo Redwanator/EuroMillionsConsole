@@ -1,4 +1,4 @@
-﻿namespace EuroMillionsConsole.UI;
+﻿namespace EuroMillionsConsole.Interaction;
 
 /// <summary>
 /// Interface pour interactions utilisateur

@@ -1,7 +1,7 @@
 ﻿using EuroMillionsConsole.Grids;
+using EuroMillionsConsole.Interaction;
 using EuroMillionsConsole.Payment;
 using EuroMillionsConsole.Pricing;
-using EuroMillionsConsole.UI;
 
 namespace EuroMillionsConsole.Engine;
 
