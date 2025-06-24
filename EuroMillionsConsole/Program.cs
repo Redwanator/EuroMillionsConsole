@@ -17,7 +17,7 @@ internal static class Program
         EuroMillionsEngine engine = new(ui);
 
         // Passer debug à TRUE pour afficher le détail des prix pour chaque pallier de grilles
-        engine.DisplayPricePreview(10, true);
+        engine.DisplayPricePreview(gridCount: 10, debugMode: true);
 
         engine.Run();
     }
