@@ -23,6 +23,9 @@ internal static class Program
         ICashRegister cashRegister = new CashRegister(ui);
         IGridDisplayService gridDisplay = new GridDisplayService(ui);
 
+        // Passer debug à TRUE pour afficher le détail des prix pour chaque pallier de grilles
+        priceCalc.DisplayPriceBreakdown(10, ui, false);
+
         EuroMillionsEngine engine = new(generator, priceCalc, ui, cashRegister, gridDisplay);
         engine.Run();
     }

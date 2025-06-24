@@ -25,11 +25,9 @@ internal sealed class EuroMillionsEngine(
     {
         do
         {
-            _ui.PrintLine("=== EuroMillions Simulator ===\r\n");
+            _ui.PrintLine("=== Générateur de grilles EuroMillions ===\r\n");
 
             int gridCount = _ui.AskInt("Combien de grilles souhaitez-vous générer ?", 1, 10);
-
-            //_priceCalculator.DisplayPriceBreakdown(gridCount, _ui); // Affiche le détail des prix pour chaque grille
 
             decimal total = _priceCalculator.CalculateTotalPrice(gridCount);
             decimal paid = _cashRegister.AskForPayment(total);

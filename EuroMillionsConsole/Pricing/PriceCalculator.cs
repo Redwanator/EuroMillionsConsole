@@ -24,26 +24,34 @@ internal sealed class PriceCalculator : IPriceCalculator
         return totalPrice;
     }
 
-    public void DisplayPriceBreakdown(int gridCount, IUserInteraction ui)
-    {
-        // A appeler dans EuroMillionsEngine.Run() pour afficher le détail des prix
-        // _priceCalculator.DisplayPriceBreakdown(gridCount, _ui);
-
-        decimal total = 0m;
-
-        for (int i = 0; i < gridCount; i++)
-        {
-            decimal unitPrice = GetUnitPrice(i);
-            total += unitPrice;
-            ui.PrintLine($"Grille {(i + 1):00} :  {unitPrice:0.00} EUR");
-        }
-
-        ui.PrintLine($"TOTAL     : {total:0.00} EUR");
-    }
-
-    private static decimal GetUnitPrice(int gridIndex)
+    private decimal GetUnitPrice(int gridIndex)
     {
         int tier = gridIndex / _gridsPerTier;
         return Math.Max(0m, _basePrice - (_discountPerTier * tier));
+    }
+
+    public void DisplayPriceBreakdown(int gridCount, IUserInteraction ui, bool debug)
+    {
+        /*
+         * A appeler dans Program.cs pour afficher le détail des prix pour chaque pallier de grilles
+         */
+
+        if (debug)
+        {
+            ui.PrintLine("Note : Le prix diminue de 1,50 EUR toutes les 2 grilles :");
+
+            decimal total = 0m;
+
+            for (int i = 0; i < gridCount; i++)
+            {
+                decimal unitPrice = GetUnitPrice(i);
+                total += unitPrice;
+                ui.PrintLine($"Grille {(i + 1):00} :  {unitPrice:0.00} EUR");
+            }
+
+            string message = (gridCount == 1) ? "Prix total pour 1 grille :" : $"Prix total pour {gridCount} grilles :";
+
+            ui.PrintLine($"{message} {total:0.00} EUR\r\n");
+        }
     }
 }

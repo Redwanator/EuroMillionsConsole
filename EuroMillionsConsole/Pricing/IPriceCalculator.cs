@@ -9,5 +9,5 @@ internal interface IPriceCalculator
 {
     decimal CalculateTotalPrice(int gridCount);
 
-    void DisplayPriceBreakdown(int gridCount, IUserInteraction ui);
+    void DisplayPriceBreakdown(int gridCount, IUserInteraction ui, bool debug);
 }
