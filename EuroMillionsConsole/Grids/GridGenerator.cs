@@ -5,9 +5,14 @@ namespace EuroMillionsConsole.Grids;
 /// <summary>
 /// Implémentation concrète de génération de grille
 /// </summary>
-internal sealed class GridGenerator(IRandomNumberProvider randomProvider) : IGridGenerator
+internal sealed class GridGenerator : IGridGenerator
 {
-    private readonly IRandomNumberProvider _randomProvider = randomProvider;
+    private readonly IRandomNumberProvider _randomProvider;
+
+    internal GridGenerator()
+    {
+        _randomProvider = new RandomNumberProvider();
+    }
 
     public EuroMillionsGrid Generate()
     {

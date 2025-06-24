@@ -8,18 +8,22 @@ namespace EuroMillionsConsole.Engine;
 /// <summary>
 /// Moteur principal orchestrant la génération, le paiement et l'affichage des grilles
 /// </summary>
-internal sealed class EuroMillionsEngine(
-    IGridGenerator generator,
-    IPriceCalculator priceCalculator,
-    IUserInteraction ui,
-    ICashRegister cashRegister,
-    IGridDisplayService gridDisplay)
+internal sealed class EuroMillionsEngine
 {
-    private readonly IGridGenerator _generator = generator;
-    private readonly IPriceCalculator _priceCalculator = priceCalculator;
-    private readonly IUserInteraction _ui = ui;
-    private readonly ICashRegister _cashRegister = cashRegister;
-    private readonly IGridDisplayService _gridDisplay = gridDisplay;
+    private readonly IUserInteraction _ui;
+    private readonly IGridGenerator _gridGenerator;
+    private readonly IPriceCalculator _priceCalculator;
+    private readonly ICashRegister _cashRegister;
+    private readonly IGridDisplayService _gridDisplay;
+
+    internal EuroMillionsEngine(IUserInteraction ui)
+    {
+        _ui = ui;
+        _gridGenerator = new GridGenerator();
+        _priceCalculator = new PriceCalculator();
+        _cashRegister = new CashRegister(ui);
+        _gridDisplay = new GridDisplayService(ui);
+    }
 
     internal void Run()
     {
@@ -41,7 +45,7 @@ internal sealed class EuroMillionsEngine(
 
             HashSet<EuroMillionsGrid> uniqueGrids = new();
             while (uniqueGrids.Count < gridCount)
-                uniqueGrids.Add(_generator.Generate());
+                uniqueGrids.Add(_gridGenerator.Generate());
 
             _gridDisplay.Display(uniqueGrids);
 
@@ -52,8 +56,15 @@ internal sealed class EuroMillionsEngine(
 
     private bool AskToPlayAgain()
     {
-        _ui.Print("Souhaitez-vous rejouer ? (O/N) : ");
+        _ui.Print("Souhaitez-vous rejouer ? (o/n) : ");
         string response = Console.ReadLine() ?? string.Empty;
-        return response.Trim().Equals("O", StringComparison.CurrentCultureIgnoreCase);
+        return response.Trim().Equals("o", StringComparison.CurrentCultureIgnoreCase);
     }
+
+    internal void DisplayPricePreview(int gridCount, bool debugMode)
+    {
+        if (debugMode)
+            _priceCalculator.DisplayPriceBreakdown(gridCount, _ui);
+    }
+
 }

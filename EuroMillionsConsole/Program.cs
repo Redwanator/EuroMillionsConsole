@@ -1,9 +1,5 @@
 ﻿using EuroMillionsConsole.Engine;
-using EuroMillionsConsole.Grids;
 using EuroMillionsConsole.Interaction;
-using EuroMillionsConsole.Payment;
-using EuroMillionsConsole.Pricing;
-using EuroMillionsConsole.Randomization;
 
 namespace EuroMillionsConsole;
 
@@ -16,17 +12,13 @@ internal static class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        IRandomNumberProvider provider = new RandomNumberProvider();
-        IGridGenerator generator = new GridGenerator(provider);
-        IPriceCalculator priceCalc = new PriceCalculator();
         IUserInteraction ui = new ConsoleUserInteraction();
-        ICashRegister cashRegister = new CashRegister(ui);
-        IGridDisplayService gridDisplay = new GridDisplayService(ui);
+
+        EuroMillionsEngine engine = new(ui);
 
         // Passer debug à TRUE pour afficher le détail des prix pour chaque pallier de grilles
-        priceCalc.DisplayPriceBreakdown(10, ui, false);
+        engine.DisplayPricePreview(10, true);
 
-        EuroMillionsEngine engine = new(generator, priceCalc, ui, cashRegister, gridDisplay);
         engine.Run();
     }
 }
