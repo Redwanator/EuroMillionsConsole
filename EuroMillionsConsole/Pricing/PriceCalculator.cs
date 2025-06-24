@@ -1,5 +1,6 @@
 ﻿using EuroMillionsConsole.Interaction;
-using EuroMillionsConsole.Pricing;
+
+namespace EuroMillionsConsole.Pricing;
 
 /// <summary>
 /// Implémentation concrète du calcul du tarif total en fonction du nombre de grilles
