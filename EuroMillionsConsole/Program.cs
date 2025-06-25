@@ -8,7 +8,7 @@ namespace EuroMillionsConsole;
 /// </summary>
 internal static class Program
 {
-    private static void Main(string[] args)
+    private static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 

@@ -11,10 +11,10 @@ namespace EuroMillionsConsole.Engine;
 internal sealed class EuroMillionsEngine
 {
     private readonly IUserInteraction _ui;
-    private readonly IGridGenerator _gridGenerator;
-    private readonly IPriceCalculator _priceCalculator;
-    private readonly ICashRegister _cashRegister;
-    private readonly IGridDisplayService _gridDisplay;
+    private readonly GridGenerator _gridGenerator;
+    private readonly PriceCalculator _priceCalculator;
+    private readonly CashRegister _cashRegister;
+    private readonly GridDisplayService _gridDisplay;
 
     internal EuroMillionsEngine(IUserInteraction ui)
     {
@@ -43,7 +43,7 @@ internal sealed class EuroMillionsEngine
 
             _ui.PrintLine();
 
-            HashSet<EuroMillionsGrid> uniqueGrids = new();
+            HashSet<EuroMillionsGrid> uniqueGrids = [];
             while (uniqueGrids.Count < gridCount)
                 uniqueGrids.Add(_gridGenerator.Generate());
 

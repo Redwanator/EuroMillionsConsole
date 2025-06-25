@@ -10,8 +10,8 @@ internal sealed record EuroMillionsGrid
 
     internal EuroMillionsGrid(IEnumerable<int> numbers, IEnumerable<int> stars)
     {
-        List<int> orderedNumbers = numbers.OrderBy(n => n).Distinct().ToList();
-        List<int> orderedStars = stars.OrderBy(n => n).Distinct().ToList();
+        List<int> orderedNumbers = [.. numbers.OrderBy(n => n).Distinct()];
+        List<int> orderedStars = [.. stars.OrderBy(n => n).Distinct()];
 
         if (orderedNumbers.Count != 5)
             throw new ArgumentException("Une grille doit avoir exactement 5 numéros.");

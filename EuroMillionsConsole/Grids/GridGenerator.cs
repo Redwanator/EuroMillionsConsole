@@ -7,7 +7,7 @@ namespace EuroMillionsConsole.Grids;
 /// </summary>
 internal sealed class GridGenerator : IGridGenerator
 {
-    private readonly IRandomNumberProvider _randomProvider;
+    private readonly RandomNumberProvider _randomProvider;
 
     internal GridGenerator()
     {

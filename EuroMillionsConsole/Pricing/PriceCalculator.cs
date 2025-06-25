@@ -24,7 +24,7 @@ internal sealed class PriceCalculator : IPriceCalculator
         return totalPrice;
     }
 
-    private decimal GetUnitPrice(int gridIndex)
+    private static decimal GetUnitPrice(int gridIndex)
     {
         int tier = gridIndex / _gridsPerTier;
         return Math.Max(0m, _basePrice - (_discountPerTier * tier));

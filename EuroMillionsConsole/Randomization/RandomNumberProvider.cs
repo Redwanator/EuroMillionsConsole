@@ -10,7 +10,7 @@ internal sealed class RandomNumberProvider : IRandomNumberProvider
         if (maxInclusive - minInclusive + 1 < count)
             throw new ArgumentException("Pas assez de valeurs possibles pour générer des nombres uniques."); // Par exemple : 10 nombres uniques entre 1 et 5
 
-        List<int> allPossible = Enumerable.Range(minInclusive, maxInclusive - minInclusive + 1).ToList();
+        List<int> allPossible = [.. Enumerable.Range(minInclusive, maxInclusive - minInclusive + 1)];
         List<int> result = new(count);
 
         while (result.Count < count)
