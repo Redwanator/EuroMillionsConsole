@@ -1,7 +1,6 @@
-﻿using EuroMillionsConsole.Grids;
-using EuroMillionsConsole.Interaction;
+﻿using EuroMillionsConsole.Interaction;
 
-namespace EuroMillionsConsole.Pricing;
+namespace EuroMillionsConsole.Grids;
 
 /// <summary>
 /// Implémentation concrète de l'affichage des grilles générées
@@ -14,8 +13,6 @@ public sealed class GridDisplayService(IUserInteraction ui) : IGridDisplayServic
     {
         int i = 1;
         foreach (EuroMillionsGrid grid in grids)
-        {
             _ui.PrintLine($"Grille {i++:00} : {grid}");
-        }
     }
 }

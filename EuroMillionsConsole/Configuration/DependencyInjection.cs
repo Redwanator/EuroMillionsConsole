@@ -10,6 +10,14 @@ namespace EuroMillionsConsole.Configuration;
 
 internal static class DependencyInjection
 {
+    /*
+        [EuroMillionsEngine]    --uses-->   [IUserInteraction]    --> [ConsoleUserInteraction]
+                                --uses-->   [IGridGenerator]      --> [GridGenerator]             --> [IRandomNumberProvider]     --> [RandomNumberProvider]
+                                --uses-->   [IPriceCalculator]    --> [PriceCalculator]
+                                --uses-->   [ICashRegister]       --> [CashRegister]              --> [IUserInteraction]
+                                --uses-->   [IGridDisplayService] --> [GridDisplayService]        --> [IUserInteraction]
+     */
+
     internal static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         // Singleton : services réutilisables, sans état propre ou dépendant uniquement des paramètres

@@ -14,12 +14,7 @@ internal static class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        using IHost host = Host.CreateDefaultBuilder()
-            .ConfigureServices(services =>
-            {
-                services.AddApplicationServices(); // <- on enregistre toutes les dépendances ici
-            })
-            .Build();
+        using IHost host = CreateHost();
 
         EuroMillionsEngine engine = host.Services.GetRequiredService<EuroMillionsEngine>();
 
@@ -28,4 +23,9 @@ internal static class Program
 
         engine.Run();
     }
+
+    private static IHost CreateHost() =>
+        Host.CreateDefaultBuilder()
+            .ConfigureServices(s => s.AddApplicationServices())
+            .Build();
 }
