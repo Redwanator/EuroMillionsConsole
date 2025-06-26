@@ -3,7 +3,7 @@
 /// <summary>
 /// Interface pour interactions utilisateur
 /// </summary>
-internal interface IUserInteraction
+public interface IUserInteraction
 {
     int AskInt(string message, int min, int max);
 

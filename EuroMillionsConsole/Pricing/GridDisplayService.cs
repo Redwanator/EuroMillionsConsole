@@ -6,7 +6,7 @@ namespace EuroMillionsConsole.Pricing;
 /// <summary>
 /// Implémentation concrète de l'affichage des grilles générées
 /// </summary>
-internal sealed class GridDisplayService(IUserInteraction ui) : IGridDisplayService
+public sealed class GridDisplayService(IUserInteraction ui) : IGridDisplayService
 {
     private readonly IUserInteraction _ui = ui;
 

@@ -3,7 +3,7 @@
 /// <summary>
 /// Implémentation concrète pour intéractions console (Console.ReadLine/WriteLine)
 /// </summary>
-internal sealed class ConsoleUserInteraction : IUserInteraction
+public sealed class ConsoleUserInteraction : IUserInteraction
 {
     public int AskInt(string message, int min, int max)
     {

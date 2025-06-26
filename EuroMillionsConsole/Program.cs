@@ -1,5 +1,7 @@
-﻿using EuroMillionsConsole.Engine;
-using EuroMillionsConsole.Interaction;
+﻿using EuroMillionsConsole.Configuration;
+using EuroMillionsConsole.Engine;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace EuroMillionsConsole;
 
@@ -12,12 +14,17 @@ internal static class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        IUserInteraction ui = new ConsoleUserInteraction();
+        using IHost host = Host.CreateDefaultBuilder()
+            .ConfigureServices(services =>
+            {
+                services.AddApplicationServices(); // <- on enregistre toutes les dépendances ici
+            })
+            .Build();
 
-        EuroMillionsEngine engine = new(ui);
+        EuroMillionsEngine engine = host.Services.GetRequiredService<EuroMillionsEngine>();
 
         // Passer debug à TRUE pour afficher le détail des prix pour chaque pallier de grilles
-        engine.DisplayPricePreview(gridCount: 10, debugMode: true);
+        engine.DisplayPricePreview(gridCount: 10, debugMode: false);
 
         engine.Run();
     }

@@ -3,7 +3,7 @@
 /// <summary>
 /// Interface de gestion d’encaissement
 /// </summary>
-internal interface ICashRegister
+public interface ICashRegister
 {
     decimal AskForPayment(decimal amountDue);
 }

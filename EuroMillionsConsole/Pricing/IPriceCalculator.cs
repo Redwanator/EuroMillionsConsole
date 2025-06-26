@@ -5,7 +5,7 @@ namespace EuroMillionsConsole.Pricing;
 /// <summary>
 /// Interface de calcul de prix
 /// </summary>
-internal interface IPriceCalculator
+public interface IPriceCalculator
 {
     decimal CalculateTotalPrice(int gridCount);
 

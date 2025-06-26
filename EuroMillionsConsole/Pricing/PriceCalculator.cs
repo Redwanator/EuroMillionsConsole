@@ -5,7 +5,7 @@ namespace EuroMillionsConsole.Pricing;
 /// <summary>
 /// Implémentation concrète du calcul du tarif total en fonction du nombre de grilles
 /// </summary>
-internal sealed class PriceCalculator : IPriceCalculator
+public sealed class PriceCalculator : IPriceCalculator
 {
     private const decimal _basePrice = 7.50m;
     private const decimal _discountPerTier = 1.50m;

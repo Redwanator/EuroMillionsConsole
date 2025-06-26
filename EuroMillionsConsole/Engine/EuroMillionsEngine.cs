@@ -8,22 +8,18 @@ namespace EuroMillionsConsole.Engine;
 /// <summary>
 /// Moteur principal orchestrant la génération, le paiement et l'affichage des grilles
 /// </summary>
-internal sealed class EuroMillionsEngine
+public sealed class EuroMillionsEngine(
+    IUserInteraction ui,
+    IGridGenerator gridGenerator,
+    IPriceCalculator priceCalculator,
+    ICashRegister cashRegister,
+    IGridDisplayService gridDisplay)
 {
-    private readonly IUserInteraction _ui;
-    private readonly GridGenerator _gridGenerator;
-    private readonly PriceCalculator _priceCalculator;
-    private readonly CashRegister _cashRegister;
-    private readonly GridDisplayService _gridDisplay;
-
-    internal EuroMillionsEngine(IUserInteraction ui)
-    {
-        _ui = ui;
-        _gridGenerator = new GridGenerator();
-        _priceCalculator = new PriceCalculator();
-        _cashRegister = new CashRegister(ui);
-        _gridDisplay = new GridDisplayService(ui);
-    }
+    private readonly IUserInteraction _ui = ui;
+    private readonly IGridGenerator _gridGenerator = gridGenerator;
+    private readonly IPriceCalculator _priceCalculator = priceCalculator;
+    private readonly ICashRegister _cashRegister = cashRegister;
+    private readonly IGridDisplayService _gridDisplay = gridDisplay;
 
     internal void Run()
     {
@@ -66,5 +62,4 @@ internal sealed class EuroMillionsEngine
         if (debugMode)
             _priceCalculator.DisplayPriceBreakdown(gridCount, _ui);
     }
-
 }

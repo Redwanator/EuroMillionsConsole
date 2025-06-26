@@ -5,7 +5,7 @@ namespace EuroMillionsConsole.Payment;
 /// <summary>
 /// Validation du paiement + rendu monnaie
 /// </summary>
-internal sealed class CashRegister(IUserInteraction ui) : ICashRegister
+public sealed class CashRegister(IUserInteraction ui) : ICashRegister
 {
     private readonly IUserInteraction _ui = ui;
 

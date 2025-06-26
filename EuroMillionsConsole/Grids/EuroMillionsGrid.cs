@@ -3,7 +3,7 @@
 /// <summary>
 /// Modèle d'une grille avec Numéros et Étoiles
 /// </summary>
-internal sealed record EuroMillionsGrid
+public sealed record EuroMillionsGrid
 {
     internal IReadOnlyList<int> Numbers { get; }
     internal IReadOnlyList<int> Stars { get; }

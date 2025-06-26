@@ -5,7 +5,7 @@ namespace EuroMillionsConsole.Pricing;
 /// <summary>
 /// Interface de service pour l'affichage des grilles générées
 /// </summary>
-internal interface IGridDisplayService
+public interface IGridDisplayService
 {
     void Display(IEnumerable<EuroMillionsGrid> grids);
 }

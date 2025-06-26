@@ -3,7 +3,7 @@
 /// <summary>
 /// Implémentation concrète de la génération de nombres aléatoires uniques dans une plage donnée
 /// </summary>
-internal sealed class RandomNumberProvider : IRandomNumberProvider
+public sealed class RandomNumberProvider : IRandomNumberProvider
 {
     public IEnumerable<int> PickUniqueNumbers(int minInclusive, int maxInclusive, int count)
     {
